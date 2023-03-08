@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package example;
+
+option go_package = "./pb";
+
+service ExampleService {
+    rpc Example(ExampleRequest) returns (ExampleResponse) {}
+    rpc Ready(EmptyRequest) returns (ReadyResponse) {}
+    rpc Version(EmptyRequest) returns (VersionResponse) {}
+}
+
+message ExampleRequest {
+  string msg = 1;
+}
+
+message ExampleResponse {
+  string resp = 1;
+}
+
+message EmptyRequest {
+
+}
+message ReadyResponse {
+  string ready = 1;
+}
+
+message VersionResponse {
+  string version = 1;
+}
